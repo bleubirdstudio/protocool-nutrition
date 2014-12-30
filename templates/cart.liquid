@@ -1,0 +1,145 @@
+<div id="cart" class="container">
+  
+  <!-- Begin empty cart -->
+  {% if cart.item_count == 0 %}
+  <div class="row">
+    <div class="span12 expanded-message">
+      <br>
+      <br>
+      <h2 class="tc">Your cart is empty!</h2>
+      <p>Please feel free to continue shopping. Also take some time to check out the featured products below. <strong>Stick to Protocol!</strong></p>
+    </div>
+  </div>
+  <!-- start featured product -->
+    <div class="featured-main"><img src="https://cdn.shopify.com/s/files/1/0677/1369/files/featured.png?6979" alt=""></div>
+    {% if settings.show_fp_images %}
+    <!-- Begin promo images -->
+    <div class="row" id="fp-images" style="margin-bottom:25px">
+      {% for i in (1..3) %}
+      {% capture fp_image %}fp_image_{{ i }}.jpg{% endcapture %}
+      {% capture fp_link %}fp_image_{{ i }}_link{% endcapture %}
+      {% capture fp_alt %}fp_image_{{ i }}_alt{% endcapture %}
+      <div class="span4">
+        <a href="{{ settings[fp_link] }}">
+          <img src="{{ fp_image | asset_url }}" alt="{{ settings[fp_alt] | escape }}" />
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    <!-- End promo images -->
+    {% endif %}
+
+    {% if settings.homepage != blank %}
+    <!-- Begin intro -->
+    <div class="span12 p20">
+      <div class="intro clearfix">
+        <h2>{{ pages[settings.homepage].title }}</h2>
+        <div>{{ pages[settings.homepage].content }}</div>
+      </div>
+    </div>
+    <!-- End intro -->
+    {% endif %}
+          
+    <div class="products" style="border-top: none;">
+      {% for product in collections[settings.frontpage_collection].products %}
+      <div class="col-md-3 each no-pad">{% include 'front-product-loop' with settings.frontpage_collection %}</div>
+      {% endfor %}
+    </div>
+
+    {% if settings.show_collections and settings.frontpage_collections != '' and settings.frontpage_collections != 'main-menu' and linklists[settings.frontpage_collections].links.size > 0 %}
+    <div class="products">
+      {% for link in linklists[settings.frontpage_collections].links %}
+      {% if link.type == 'collection_link' %}
+        {% assign collection = link.object %}
+        {% include 'collection-loop' %}
+      {% endif %}
+      {% endfor %}
+    </div>
+
+    {% endif %}
+  <!-- End empty cart -->
+  
+  <!-- Begin cart -->
+  {% else %}
+  <div class="row">
+    <div class="span12">
+      <h1 class="full">Your cart</h1>
+      <form action="/cart" method="post" id="cartform">
+        <table>
+          <thead>
+            <tr>
+              <th class="image" style="width: 15%;">&nbsp;</th>
+              <th class="item" style="width: 25%;">Item</th>
+              <th class="qty" style="width: 15%;">Quantity</th>
+              <th class="price" style="width: 20%;">Price</th>
+              <th class="remove" style="width: 15%;">remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in cart.items %}
+            <tr>
+              <td class="image">
+                <div class="product_image">
+                  <a href="{{ item.url }}">
+                    <img src="{{ item | img_url: 'small' }}"  alt="{{ item.product.title }}" />
+                  </a>
+                </div>
+              </td>
+              <td class="item">
+                <a href="{{ item.url }}">
+                  <strong>{{ item.product.title }}</strong>
+                  {% if item.product.variants.size > 1 %}
+                  <span class="variant_title">{{ item.variant.title }}</span>
+                  {% endif %}
+                </a>
+              </td>
+              <td class="qty">
+                <input type="text" size="4" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" onfocus="this.select();" class="tc item-quantity" />
+              </td>
+              <td class="price">{{ item.line_price | money }}</td>
+              <td class="remove"><a href="/cart/change?line={{ forloop.index }}&quantity=0" class="cart">Remove</a></td>
+            </tr>
+            {% endfor %}
+            <tr class="summary">
+              <td class="image">&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td class="price"><span class="total"><strong><span style="font-size: 11px;">Product Subtotal:</span> <br /> <span style="color: #a32c2c; font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 16px;">{{ cart.total_price | money }}</span></strong></span></td>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="span6 inner-left inner-right">
+          {% comment %}
+          <!--
+          <div class="checkout-buttons clearfix">
+            <label for="note">Add special instructions for your order...</label>
+            <textarea id="note" name="note" rows="8" cols="70">{{ cart.note }}</textarea>
+          </div>
+          -->
+          {% endcomment %}
+        </div>
+
+        <div class="span6 cart-buttons inner-right inner-left">
+          <div class="buttons clearfix">
+            <input type="submit" id="checkout" class="btn" name="checkout" value="Check out" />
+            <input type="submit" id="update-cart" class="btn secondary" name="update" value="Update" />
+            {% if additional_checkout_buttons %}        
+             <div class="extra-checkout-buttons">
+             {{ content_for_additional_checkout_buttons }}
+             </div>
+          {% endif %}
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  {% endif %}
+  
+  
+  <!-- End cart -->
+  
+</div> 
+

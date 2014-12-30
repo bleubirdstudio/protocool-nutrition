@@ -1,0 +1,135 @@
+<div id="page_contact" class="container">
+  
+  <div class="span12">
+    <h1>{{ page.title }}</h1>
+    <div class="page-with-contact-form">
+      {{ page.content }}
+            
+        {% form 'contact', id:"regForm" %}
+        {% if form.posted_successfully? %}
+        <div class="successForm feedback">
+          <img src="https://cdn.shopify.com/s/files/1/0677/1369/files/thanks.png?12391">
+          <p>One of our Protocol Nutrition Representatives will be in contact with you soon! Please let us know if you have any more questions or concerns. <strong>Stick to Protocol!</strong></p>
+        </div>
+        {% endif %}
+
+        {% if form.errors %}
+        <div class="errorForm feedback">
+          <p>Oops, sorry. We were unable to submit your inquiry because it contained {{ form.errors | size | pluralize: 'an error', 'a few errors' }}. Please correct the following and submit again:</p>
+          {% for field in form.errors %}
+            <p>The {{ field | capitalize | replace: 'Body', 'Message' }} field {{ form.errors.messages[field] }}.</p>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <div id="contactFormWrapper">
+            <div class="col-md-12">
+              <div class="col-md-12"> 
+              <label for="questions">Please let us know how we can help: *</label>
+              <select id="Q" required  name="contact[Topic]">
+                <option value="null">* Select a Topic</option>
+                <option value="tracking">Tracking Support</option>
+                <option value="general">General Question</option>
+                <option value="shipping">Shipping Update / Question</option>
+                <option value="coach">Coaches Support</option>
+                <option value="gym">Gym Support</option>
+              </select> 
+              </div>
+            </div>
+            <div class="col-md-12 names" style="display: none;">
+              <div class="col-md-6">
+                <label>First Name: *</label><br/>
+                <input type="text" id="contactFormFirstName" name="contact[First Name]" placeholder="John" required />
+              </div>
+              <div class="col-md-6">
+                <label>Last Name: *</label><br/>
+                <input type="text" id="contactFormLastName" name="contact[Last Name]" placeholder="Doe" required />
+              </div>
+            </div>
+            <div class="col-md-12 emails" style="display: none;"><div class="col-md-12">
+              <label>Email: *</label><br/>
+              <input type="email" id="contactFormEmail" name="contact[Email]" placeholder="john@example.com" required />
+            </div></div>
+            <div class="col-md-12 numbers" style="display: none;"><div class="col-md-12">
+              <label>Phone Number:</label><br/>
+              <input type="telephone" id="contactFormTelephone" name="contact[Phone]" placeholder="555-555-1234" />
+            </div></div>
+            
+            <div class="col-md-12 addresses" style="display: none;"><div class="col-md-12">
+              <label>Street Address:</label><br/>
+              <input id="contactFormAddress" name="contact[Street Address]" placeholder="Street Address" />
+            </div></div>
+
+            <div class="col-md-12 cities" style="display: none;"><div class="col-md-12">
+            <div class="col-md-4 no-pad">
+              <label>City:</label><br/>
+              <input id="contactFormCity" name="contact[City]" placeholder="City" />
+            </div>
+            <div class="col-md-4 no-pad">
+              <label>State:</label><br/>
+              <input id="contactFormState" name="contact[State]" placeholder="State" />
+            </div>
+            <div class="col-md-4 no-pad">
+              <label>Zip:</label><br/>
+              <input id="contactFormZip" name="contact[Zip]" placeholder="Zip" />
+            </div>
+            </div></div>
+
+            <div class="col-md-12 coaches" style="display: none;">
+              <div class="col-md-6">
+                <label>Are you currently a coach?</label><br/>
+                <select id="C" required name="contact[Are you currently a coach]">
+                  <option value="null">* Select an Option</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="process">In the process</option>
+                </select> 
+              </div>
+              <div class="col-md-6">
+                 <label>Would you recommend being a Coach to someone?</label><br/>
+                  <select id="R" required name="contact[Would you recommend being a coach]">
+                    <option value="null">* Select an Option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="process">I am not sure yet...</option>
+                  </select> 
+              </div>
+              </div>
+
+              <div class="col-md-12 gymes" style="display: none;">
+              <div class="col-md-6">
+                <label>Is your Gym a Protocol Gym?</label><br/>
+                <select id="G" required name="contact[Are you a Protocol Gym]">
+                  <option value="null">* Select an Option</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="process">In the process</option>
+                </select> 
+              </div>
+              <div class="col-md-6">
+                 <label>If so, has the experience been pleasant?</label><br/>
+                  <select nid="G2" required name="contact[Has it been a pleasant experience]">
+                    <option value="null">* Select an Option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="process">I am not sure yet...</option>
+                  </select> 
+              </div>
+              </div>
+
+            <div class="col-md-12 messages" style="display: none;"><div class="col-md-12">
+              <label>Message:</label><br/>
+              <textarea rows="6" cols="75" id="contactFormMessage" name="contact[Message]" placeholder="Your Message"></textarea>
+            </div></div>
+            <div class="col-md-12" style="display: none;"><div class="col-md-12">
+            <input type="submit" id="contactFormSubmit" value="Send" class="btn" onclick="CheckAndSubmit ()"/>
+            </div></div>
+        </div>
+        {% endform %} 
+      
+    </div>
+  </div>
+  
+</div>
+
+
