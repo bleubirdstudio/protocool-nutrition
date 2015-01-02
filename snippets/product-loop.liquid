@@ -2,13 +2,13 @@
 {% capture url %}{% if collection_handle != "" %}/collections/{{ product-loop }}{{ product.url }}{% else %}{{ product.url }}{% endif %}{% endcapture %}
 
 {% if settings.products_per_row == '3' %}{% assign product_span_size = 'span4' %}{% endif %}
-{% if settings.products_per_row == '4' %}{% assign product_span_size = 'span3' %}{% endif %}
+{% if settings.products_per_row == '4' %}{% assign product_span_size = 'col-md-3' %}{% endif %}
 {% if template == 'index' %}
   {% if collections[collection_handle].products.size == 4 %}{% assign product_span_size = 'span4' %}{% endif %}
   {% if collections[collection_handle].products.size == 5 %}{% assign product_span_size = 'span3' %}{% endif %}
 {% endif %}
 
-<div class="product {{ product_span_size }} col-md-3">
+<div class="product {{ product_span_size }}">
 
   {% if product.price_min < product.compare_at_price_min %}
     <span class="circle sale">Sale</span>
@@ -48,4 +48,4 @@
 </div>
 
 {% if product_span_size == 'span3' %}{% cycle 'clear-product-loop': '', '', '<div style="clear:both;"></div>' %}{% endif %}
-{% if product_span_size == 'span3' %}{% cycle 'clear-product-loop': '', '', '', '<div style="clear:both;"></div>' %}{% endif %}
+{% if product_span_size == 'col-md-3' %}{% cycle 'clear-product-loop': '', '', '', '<div style="clear:both;"></div>' %}{% endif %}

@@ -70,7 +70,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   {{ 'owl.carousel.js' | asset_url | script_tag }}
-  
+  {{ 'jquery.sticky.js' | asset_url | script_tag }}
+
 </head>
 
 <body>
@@ -95,7 +96,7 @@
   <!-- End toolbar -->
 
   <!-- NAVBAR -->
-  <nav class="navigational container-fluid muscle">
+  <nav class="navigational container-fluid muscle" id="sticker">
     <div class="container">
       <div class="logo">
         <h1><a href="/"><img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" /></a></h1>
