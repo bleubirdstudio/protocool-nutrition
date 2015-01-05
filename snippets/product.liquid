@@ -18,6 +18,7 @@
           </span>
           <span class="arrow-space">&#62;</span>
           <strong>{{ product.title }}</strong>
+
         </div>
       </div>
     </div>
@@ -83,7 +84,9 @@
       <!-- Begin description -->
         
         <div class="col-md-6 product-information">
-          <h1 class="title">{{ product.title }}</h1>
+          <h1 class="title">{{ product.title }}</h1> <br />
+          Weight: {{ product.type }}
+          {{ product.vendor }}
           {% assign variant = product.selected_or_first_available_variant %}
           <div class="purchase">
             <div class="reg-price">Our Price: <span style="color: #800000">{{ variant.price | money }}</span></div> 
