@@ -85,8 +85,8 @@
         
         <div class="col-md-6 product-information">
           <h1 class="title">{{ product.title }}</h1> <br />
-          Weight: {{ product.type }}
-          {{ product.vendor }}
+          Item Size: {{ product.type }} <br>
+          Brand: {{ product.vendor }}
           {% assign variant = product.selected_or_first_available_variant %}
           <div class="purchase">
             <div class="reg-price">Our Price: <span style="color: #800000">{{ variant.price | money }}</span></div> 
@@ -143,7 +143,7 @@
         <!-- End social buttons -->
 
         <div class="description col-md-12">
-          <div class="col-md-10 col-md-offset-1">
+          <div class="col-md-12 ">
             <div class="title">{{ product.title }}</div>          
             {{ product.description }}
           </div>
