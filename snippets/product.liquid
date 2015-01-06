@@ -70,7 +70,7 @@
         </div>
         <!-- End thumbnails -->
         <style>
-        .thumbs .image { margin: 15px 0 }
+        .thumbs .image { margin: 15px 0 } 
         .thumbs .image { padding: 0 15px }
         .thumbs .last-in-row { padding-right: 0 }
         </style>
@@ -104,7 +104,7 @@
             <!-- Begin product options -->
             <div class="product-options {% if hide_default_title %}no-options {% endif %}">
 
-              <div class="select clearfix"{% if hide_default_title %} style="display:none"{% endif %}>
+              <div class="select options clearfix"{% if hide_default_title %} style="display:none"{% endif %}>
                 <select id="product-select" name="id">
                   {% for variant in product.variants %}
                   <option value="{{ variant.id }}"{% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %}>{{ variant.title }} - {{ variant.price | money }}</option>
