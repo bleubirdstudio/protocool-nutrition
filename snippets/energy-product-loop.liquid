@@ -1,0 +1,61 @@
+{% capture collection_handle %}{{ energy-product-loop | handleize }}{% endcapture %}
+{% capture url %}{% if collection_handle != "" %}/collections/{{ energy-product-loop }}{{ product.url }}{% else %}{{ product.url }}{% endif %}{% endcapture %}
+
+{% if settings.products_per_row == '3' %}{% assign product_span_size = 'col-md-12' %}{% endif %}
+{% if settings.products_per_row == '4' %}{% assign product_span_size = 'col-md-12' %}{% endif %}
+{% if template == 'index' %}
+  {% if collections[collection_handle].products.size == 4 %}{% assign product_span_size = 'span4' %}{% endif %}
+  {% if collections[collection_handle].products.size == 5 %}{% assign product_span_size = 'span3' %}{% endif %}
+{% endif %}
+
+<div class="product {{ product_span_size }}">
+
+  {% if product.price_min < product.compare_at_price_min %}
+    <span class="circle sale">Sale</span>
+  {% endif %}
+
+  <div class="image">
+    <a href="{{ url }}">          
+      <img src="{% if product.images.size >= 1%}{{ product.featured_image | product_img_url: 'large' }}{% else %}{{ 'No_Image_2.png' | asset_url }}{% endif %}" alt="{{ product.title | escape  }}" />
+    </a>
+  </div>
+
+  <div class="details">
+    <a href="{{ url }}" class="clearfix">
+      <h4 class="title">{{ product.title }}</h4>
+      <hr>
+
+      <span class="price">
+      {% if product.available %}
+        {% if product.compare_at_price_max > product.price %}
+        <div class="compare">Original Price: <del>{{ product.compare_at_price | money }}</del></div>
+        {% endif %}
+        {% if product.price_varies %}
+        <small><em>from</em></small>
+        {% endif %}
+        <div class="ourprice">Our Price: {{ product.price | money }}</div>
+      {% else %}
+        {{ product.price | money }} Sold Out
+      {% endif %}
+      </span>
+      
+        <div class="purchase-section{% if product.variants.size > 1 %} multiple{% endif %}">
+          <div class="purchase">
+            {% unless product.available %}
+            <p>Sold Out</p>
+            {% else %}
+            <form method="post" action="/cart/add"> 
+            <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+            <input type="submit" value="Buy now" class="btn" />
+            <input type="hidden" name="return_to" value="back" />
+            </form>
+            <div id="cart-animation" style="display:none">1</div>
+            {% endunless %}
+          </div>
+        </div>
+      <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+    </a>
+  </div>
+</div>
+
+{% cycle 'clear-product-loop': '', '', '<div style="clear:both;"></div>' %}

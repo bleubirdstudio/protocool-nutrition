@@ -110,7 +110,13 @@
           </tbody>
         </table>
 
-        <input type="text" name="attributes[some-info]" value="{{ cart.attributes.some-info }}" placeholder="Some info..." class="required" data-error="Please tell us your info." />
+        <div class="mycoach">
+          <label>Name of MyProtocol Coach:</label>
+          <input type="text" name="attributes[some-info]" value="{{ cart.attributes.some-info }}" placeholder="John Smith" class="required" data-error="Please tell us your info." />
+          <div class="explain">*If you don't have a coach, please mark as none. Thank you!</div>  
+        </div>  
+
+        <div class="question">Want to learn more about MyProtocol. <a href="#">Sign up Today!</a></div>  
 
         <div class="span6 inner-left inner-right">
           {% comment %}
