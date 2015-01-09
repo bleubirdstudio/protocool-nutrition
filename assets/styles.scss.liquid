@@ -88,7 +88,7 @@ h1{
     box-shadow: 0px 5px 25px -3px rgba(0,0,0,0.5);
     height: 110px;
     position: relative;
-    z-index: 2;
+    z-index: 20;
   }
   img{
     width: 100%;
@@ -520,12 +520,48 @@ h1{
 .featured-main{
   img{
     display: block;
-    margin: 10px auto 50px;
+    margin: 10px auto 50px; 
   }
 }
-
+.outerbanner{
+  width: 100%;
+  display: block;
+  background: black;
+  .find {
+    width: 210px;
+    height: 75px;
+    display: inline-block;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: white;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 5px 0 30px -5px black;
+    padding-right: 10px;
+    opacity: .75;
+    -webkit-transition: .25s;
+    -moz-transition: .25s;
+    -ms-transition: .25s;
+    -o-transition: .25s;
+    &:hover{
+      opacity: 1;
+      width: 250px;
+      background-color: #a32c2c;
+    }
+    img{
+      float: right;
+    }
+  }
+  .become{
+    top: 120px !important;
+  }
+  .customize{
+    top: 210px !important;
+  }
+}
 .banner { position: relative; overflow: auto; height: auto !important;
-  width: 100% !important;
+  width: 1200px !important;
+  margin: 0 auto;
   ul{
     padding: 0;
     margin: 0;
@@ -579,37 +615,6 @@ h1{
         background: #bd3a25;
       }
     }
-  }
-  .find {
-    width: 210px;
-    height: 75px;
-    display: inline-block;
-    position: absolute;
-    top: 30px;
-    left: 0;
-    background-color: white;
-    border-radius: 0 10px 10px 0;
-    box-shadow: 5px 0 30px -5px black;
-    padding-right: 10px;
-    opacity: .75;
-    -webkit-transition: .25s;
-    -moz-transition: .25s;
-    -ms-transition: .25s;
-    -o-transition: .25s;
-    &:hover{
-      opacity: 1;
-      width: 250px;
-      background-color: #a32c2c;
-    }
-    img{
-      float: right;
-    }
-  }
-  .become{
-    top: 120px !important;
-  }
-  .customize{
-    top: 210px !important;
   }
 }
 .social{
@@ -1006,7 +1011,7 @@ footer{
       color: white;
       position: absolute;
       bottom: 70px;
-      margin-left: -165px;
+      margin-left: -13.5%;
       font-size: 11px;
       opacity: .5;
     }
@@ -2006,6 +2011,36 @@ footer{
     display: block;
     text-align: center; 
   }
+}
+
+/* pagination */
+.pagination{
+  margin: 0 0 30px 0 !important;
+  .page_number{
+    font-size: 12px;
+    color: #4c4c4c;
+    font-weight: bold;
+  }
+  a{
+    width: 100px;
+    height: 26px;
+    display: block;
+    background: url("https://cdn.shopify.com/s/files/1/0677/1369/files/pagination.png?14118");
+    background-size: 200%;
+    border: none !important;
+    background-color: transparent !important;
+    opacity: .85;
+    &:hover{
+      opacity:1;
+    }
+    &.next{
+      background-position: 104% 0;
+    }
+  }
+}
+.browse-tags{
+  display: inline-block;
+  margin-right: 20px !important;
 }
 
 @-webkit-keyframes banner {

@@ -1,26 +1,28 @@
-<div class="banner">
-     <ul>
-         {% if settings.slide_1 != false or settings.slide_2 != false or settings.slide_3 != false or settings.slide_4 != false %}
-         <!-- Begin slider -->
-                 {% for i in (1..4) %}
-                   {% capture show_slide %}slide_{{ i }}{% endcapture %}
-                   {% capture image %}slideshow_{{ i }}.jpg{% endcapture %}
-                   {% capture link %}slide_{{ i }}_link{% endcapture %}
-                   {% capture alt %}slide_{{ i }}_alt{% endcapture %}
-                   {% if settings[show_slide] %}
-                   <li>
-                     <a href="{{ settings[link] }}">
-                       <img src="{{ image | asset_url }}" alt="{{ settings[alt] | escape }}" />
-                     </a>
-                   </li>
-                   {% endif %}
-                 {% endfor %}
-              {% endif %}
-     </ul>
-     <a href="#" class="find"><img src="https://cdn.shopify.com/s/files/1/0677/1369/files/find.png?10464" alt=""></a>
-     <a href="#" class="find become"><img src="https://cdn.shopify.com/s/files/1/0677/1369/files/become.png?10464" alt=""></a>
-     <a href="#" class="find customize"><img src="https://cdn.shopify.com/s/files/1/0677/1369/files/customize.png?10464" alt=""></a>
- </div> 
+<div class="outerbanner">
+  <div class="banner">
+       <ul>
+           {% if settings.slide_1 != false or settings.slide_2 != false or settings.slide_3 != false or settings.slide_4 != false %}
+           <!-- Begin slider -->
+                   {% for i in (1..4) %}
+                     {% capture show_slide %}slide_{{ i }}{% endcapture %}
+                     {% capture image %}slideshow_{{ i }}.jpg{% endcapture %}
+                     {% capture link %}slide_{{ i }}_link{% endcapture %}
+                     {% capture alt %}slide_{{ i }}_alt{% endcapture %}
+                     {% if settings[show_slide] %}
+                     <li>
+                       <a href="{{ settings[link] }}">
+                         <img src="{{ image | asset_url }}" alt="{{ settings[alt] | escape }}" />
+                       </a>
+                     </li>
+                     {% endif %}
+                   {% endfor %}
+                {% endif %}
+       </ul> 
+   </div> 
+    <a href="#" class="find"><img src="https://cdn.shopify.com/s/files/1/0677/1369/files/find.png?10464" alt=""></a>
+    <a href="#" class="find become"><img src="https://cdn.shopify.com/s/files/1/0677/1369/files/become.png?10464" alt=""></a>
+    <a href="#" class="find customize"><img src="https://cdn.shopify.com/s/files/1/0677/1369/files/customize.png?10464" alt=""></a>
+ </div>  
 
 
 <div class="container-fluid social" >

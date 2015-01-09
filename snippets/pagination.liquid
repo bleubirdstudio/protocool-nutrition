@@ -3,15 +3,15 @@
   <div>
     <ul class="pagination clearfix">
     {% if paginate.previous %}
-    	<li><a href="{{ paginate.previous.url }}" class="prev">Previous</a></li>
+    	<li><a href="{{ paginate.previous.url }}" class="prev"></a></li>
     {% else %}
-    	<li><span>{{ back_word }}</span></li>
+    	<li><div>{{ back_word }}</div></li>
     {% endif %}
-    	<li>Page {{ paginate.current_page }} of {{ paginate.pages }}</li>
+    <li class="page_number">Page {{ paginate.current_page }} of {{ paginate.pages }}</li>
     {% if paginate.next %}
-    	<li><a href="{{ paginate.next.url }}" class="next">Next</a></li>
+    	<li><a href="{{ paginate.next.url }}" class="next"></a></li>
     {% else %}
-    	<li><span>{{ next_word }}</span></li>
+    	<li><div>{{ next_word }}</div></li>
     {% endif %}
     </ul>
   </div>
