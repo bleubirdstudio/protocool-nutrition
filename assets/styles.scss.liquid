@@ -304,6 +304,35 @@ h1{
   }
 }
 
+.featured-products{
+  .each{
+    display: none;
+    &:nth-of-type(1){
+      display: inline-block;
+    }
+    &:nth-of-type(2){
+      display: inline-block;
+    }
+    &:nth-of-type(3){
+      display: inline-block;
+    }
+    &:nth-of-type(4){
+      display: inline-block;
+    }
+    &:nth-of-type(5){
+      display: inline-block;
+    }
+    &:nth-of-type(6){
+      display: inline-block;
+    }
+    &:nth-of-type(7){
+      display: inline-block;
+    }
+    &:nth-of-type(8){
+      display: inline-block;
+    }
+  }  
+}
 
 .mycoach{
   width: 400px;
@@ -842,6 +871,56 @@ footer{
     }
   }
   nav{
+    .social_two{
+        display: inline-block;
+        position: absolute;
+        width: 15%;
+        right: 55px;
+        top: 29px;
+        h4{
+          font-family: 'oswald', sans-serif;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: white;
+          margin-bottom: 30px;
+        }
+        .fb, .tw, .gg, .yt{
+           display: inline-block;
+           margin: 0 auto;
+           text-transform: center;
+           width: 30px;
+           height: 30px;
+           margin-right: 10px;
+           margin-bottom: 20px;
+           border-radius: 5px;
+           background: url(https://cdn.shopify.com/s/files/1/0677/1369/files/Social-media-logos.jpg?6390);
+           background-size: 500%;
+           -webkit-transition: .15s;
+           -moz-transition: .15s;
+           -ms-transition: .15s;
+           -o-transition: .15s;
+          &:hover{
+            -webkit-transform: scale(1.15);
+            -moz-transform: scale(1.15);
+            -ms-transform: scale(1.15);
+            -o-transform: scale(1.15);
+          }
+        }
+        .fb{
+          background-position: -41px -9px;
+        }
+        .tw{
+          background-position: -5px -9px;
+        }
+        .gg{
+          background-position: -78px -136px;
+          border-radius: 10px;
+        }
+        .yt{
+          background-position: -265px -9px;
+        }
+      }
     ul{
       margin: 0;
       width: 55%;
@@ -1010,7 +1089,7 @@ footer{
     a.all-products{
       color: white;
       position: absolute;
-      bottom: 70px;
+      bottom: 75px;
       margin-left: -13.5%;
       font-size: 11px;
       opacity: .5;
@@ -1019,10 +1098,45 @@ footer{
 }
 .bottom-area{
   background: black;
-  height: 50px; 
+  height: 55px; 
+  .title, .created_by{
+    float: left;
+    margin: 18px 20px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+    a{
+      color: #bd3a25;
+      cursor: pointer;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  .created_by{
+    float: right;
+  }
 }
  
 /* products */
+.view_all{
+  width: 90%;
+  display: block;
+  background: transparent;
+  border: 1px solid #800000;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  color: #800000;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0 auto 50px auto;
+  &:hover{
+    background: #800000;
+    color: white;
+    text-decoration: none;
+  }
+}
 #product{
   .image{
     display: inline-block;
