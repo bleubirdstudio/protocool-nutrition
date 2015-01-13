@@ -97,8 +97,20 @@
   </div>
   <a href="collections/frontpage" class="view_all">View All Featured Products</a>
 </div> 
+<div id="boxes">
+  <div style="top: 199.5px; left: 551.5px; display: none;" id="dialog" class="window"> 
+  <div class="thanks">Thank you for choosing</div>
+  <div class="logo"></div> 
+    <div id="lorem">
+      <p>For a limited time, sign up for our newsletter and receive a $5 off coupon for your first order. Be the first to hear about our exciting sales, specials and tips for the best health. We look forward to helping you reach your personal goals. Stick to protocol!</p>
+    </div>
+    <div id="popupfoot"><form action="{{ settings.mailing_list_form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+                <input type="email" value="" placeholder="Email Address" name="EMAIL" id="mail" /><button type="submit" class="newsletter" value="Subscribe" name="subscribe" id="subscribe"></button>
+              </form></div>
+  </div>
+  <div style="width: 1478px; font-size: 32pt; color:white; height: 602px; display: none; opacity: 0.8;" id="mask"></div>
+</div>
 
-<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us9.list-manage.com","uuid":"abdac45257bfea623dee6a75b","lid":"88b772c9e7"}) })</script>
 
 <!-- {% for product_vendor in shop.vendors %} 
 <div>{{ product_vendor | link_to_vendor }}</div> 
