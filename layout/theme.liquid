@@ -114,17 +114,7 @@
       </div>
       <div class="customer-tools">
         <div id="cart-target" class="toolbar-cart ">
-          <a href="/cart" class="cart" title="Shopping Cart">
-            <!-- {% if cart.item_count == 0 %}
-              <span class="empty"> 
-                CART EMPTY 
-              </span>
-            {% endif %}
-            {% if cart.item_count > 0 %}
-            <span class="bag"> 
-              <span class="number">{{ cart.item_count }}</span><span class="circle"></span> 
-            </span> -->
-            </a>
+          <a href="/cart" class="cart" title="Shopping Cart"></a>
             <span class="full-cart">
               <div class="top"><span class="left">total items in cart: {{ cart.item_count }}</span><a href="/cart" class="right">Checkout</a></div>   
               <div class="items-all">   
@@ -138,8 +128,6 @@
                 {% endfor %}
               </div>
             </span>
-            {% endif %}
-            </a>
         </div>
         {% include 'customer_links' %}
       </div>
