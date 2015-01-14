@@ -390,13 +390,8 @@ h1{
 }
 .customer-tools{  
   display: inline-block;
-  float: right;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 15px;
-  margin-top: 35px;
-  color: #e6e6e6;
-  text-align: right;
+  position: absolute;
+  border-right: 1px solid rgba(255,255,255,0.25);
   a{
     color: #e6e6e6;
   }
@@ -405,6 +400,7 @@ h1{
   }
   #cart-target{
     position: relative;
+    border-right: 1px solid rgba(0,0,0,0.25);
     &:hover{
       .full-cart{
         display: inline-block;
@@ -414,7 +410,7 @@ h1{
       display: none;
       position: absolute;
       right: 0;
-      top: 40px;
+      top: 85px;
       width: 300px;
       height: auto;
       background: white;
@@ -430,7 +426,7 @@ h1{
         border-bottom: 8px solid white;
         position: absolute;
         top: -8px;
-        right: 5px;
+        right: 26px;
       }
       .items-all{
         display: inline-block;
@@ -479,22 +475,22 @@ h1{
     }
     .cart{
       opacity: 1;
-      position: relative;
-      padding: 44px 0;
+      display: inline-block;
+      padding: 41px 25px;
+      border-right: 1px solid rgba(255,255,255,0.25);
       &:before{
         content: "\e116";
         font-family: 'Glyphicons Halflings';
-        font-size: 15px;
+        font-size: 18px;
         display: inline-block;
         color: #e6e6e6;
-        margin-right: 10px;
       }
-      .empty{
+      /*.empty{
         font-size: 12px;
         opacity: .75;
         margin: 0 5px 0 -10px; 
-      }
-      .bag{
+      }*/
+      /*.bag{
         margin-left: 10px;
         -webkit-transition: .25s;
         -moz-transition: .25s;
@@ -507,8 +503,8 @@ h1{
         .number{
           position: relative;
           z-index: 2
-        }
-        .circle{
+        }*/
+        /*.circle{
           width: 30px;
           height: 30px;
           border-radius: 50%;
@@ -522,20 +518,12 @@ h1{
           -moz-transition: .25s;
           -ms-transition: .25s;
           -o-transition: .25s;
-        }
-      }
+        }*/
+      /*}*/
       &:hover{
-        color: white;
-        text-decoration: none;
-        .bag{
-          color: white !important;
-          .circle{
-            background: #bd3a25;
-            -webkit-transform: scale(1.25);
-            -moz-transform: scale(1.25);
-            -o-transform: scale(1.25);
-            -ms-transform: scale(1.25);
-          }
+        background: #333333;
+        &:before{
+          color: #bd3a25;
         }
       }
       &:hover{
@@ -549,11 +537,22 @@ h1{
   .toolbar-customer{
     display: inline-block;
     font-size: 12px;
+    width: 105px;
     a{
       opacity: .75;
       color: white;
-      margin-right: 10px;
+      padding: 47px 0 46px 0;
+      text-align: center;
+      width: 104%;
+      font-weight: bold;
+      text-transform: uppercase;
+      display: inline-block;
+      position: relative;
+      top: -3px;
+      left: -5px;
       &:hover{
+        color: #bd3a25;
+        background: #333333;
         text-decoration: none;
       }
     }
@@ -578,7 +577,7 @@ h1{
     height: 75px;
     display: inline-block;
     position: absolute;
-    top: 30px;
+    top: 100px;
     left: 0;
     background-color: white;
     border-radius: 0 10px 10px 0;
@@ -599,10 +598,10 @@ h1{
     }
   }
   .become{
-    top: 120px !important;
+    top: 190px !important;
   }
   .customize{
-    top: 210px !important;
+    top: 280px !important;
   }
 }
 .banner { position: relative; overflow: auto; height: auto !important;
@@ -1601,10 +1600,10 @@ footer{
   }
   .article{
     margin-top: 25px;
-    img{
+    /*img{
       width: 100%;
       display: block;
-    }
+    }*/
     .a-title{
       display: block;
       font-family: 'Oswald', sans-serif;
@@ -1673,10 +1672,10 @@ footer{
     color: #bd3a25;
     font-size: 35px;
   }
-  img{
+/*  img{
     width: 100%;
     display: block;
-  }
+  }*/
   .date{
     display: block;
     font-family: 'Oswald', sans-serif;
@@ -2171,6 +2170,28 @@ footer{
     }
   }
 }
+.shipping{
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 25px;
+  padding: 10px 0;
+  color: white;
+  text-shadow: 2px 2px 3px black;
+  background: #a90329; /* Old browsers */
+  background: -moz-linear-gradient(top,  #a90329 0%, #8f0222 44%, #6d0019 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a90329), color-stop(44%,#8f0222), color-stop(100%,#6d0019)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+  &:hover{
+    text-decoration: none;
+    color: white;
+  }
+}
 
 .links-products{
   margin: 50px 0; 
@@ -2273,12 +2294,14 @@ footer{
 
 /*email popup*/
 #mask {
+  top: -160px !important;
   position:absolute;
   left:0;
   top:0;
   z-index:9000;
   background-color:#000;
   display:none;
+  opacity: .75 !important;
 }  
 #boxes .window {
   position:absolute;
@@ -2309,12 +2332,37 @@ footer{
   margin-bottom: 10px;
 }
 #boxes #dialog {
+  top: 150px !important;
   width:450px; 
   height:auto;
   padding:10px;
   background-color:#ffffff;
   font-size: 12px;
   text-align: center;
+}
+#boxes input{
+  padding: 5px 10px;
+  border-radius: 5px 0 0 5px;
+  border: 2px solid white;
+  margin-top: 20px;
+  border: 1px solid grey;
+  width: 91%;
+}
+#boxes button[type="submit"]{
+  background: transparent;
+  border: none;
+  padding: 0;
+  float: right;
+  margin-top: 19px;
+  &:after{
+    content: "\e080";
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    color: white;
+    background: #a32c2c;
+    padding: 7px 6px;
+    border-radius: 0 5px 5px 0;
+  }
 }
 .maintext{
   text-align: center;
