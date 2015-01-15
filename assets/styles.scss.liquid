@@ -105,7 +105,7 @@ h1{
     box-shadow: 0px 5px 25px -3px rgba(0,0,0,0.5);
     height: 110px;
     position: relative;
-    z-index: 20;
+    z-index: 21;
   }
   img{
     width: 100%;
@@ -538,6 +538,7 @@ h1{
     display: inline-block;
     font-size: 12px;
     width: 105px;
+    height: 100px;
     a{
       opacity: .75;
       color: white;
@@ -677,6 +678,7 @@ h1{
     text-transform: center;
     width: 50px;
     height: 50px;
+    margin-top: 15px;
     margin-right: 10px;
     border-radius: 5px;
     background: url(https://cdn.shopify.com/s/files/1/0677/1369/files/Social-media-logos.jpg?6390);
@@ -2193,6 +2195,25 @@ footer{
     color: white;
   }
 }
+.newsletter-banner{
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  margin-top: -5px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  text-shadow: 2px 2px 3px black;
+  background: url('https://cdn.shopify.com/s/files/1/0677/1369/files/darth_stripe.png?16264');
+  z-index: 20;
+  cursor: pointer;
+  &:hover{
+    text-decoration: none;
+    color: white;
+  }
+}
 
 .links-products{
   margin: 50px 0; 
@@ -2293,38 +2314,18 @@ footer{
   }
 }
 
-/*email popup*/
-#mask {
-  top: -160px !important;
-  position:absolute;
-  left:0;
-  top:0;
-  height: 2457px !important;
-  z-index:9000;
-  background-color:#000;
-  display:none;
-  opacity: .75 !important;
-}  
-#boxes .window {
-  position:absolute;
-  left:0;
-  top:0;
-  width:440px;
-  height:200px;
-  display:none;
-  z-index:9999;
-  padding:20px;
-  border-radius: 15px;
-  text-align: center;
+/*email popup*/  
+#newsletter .modal-content {
+  padding: 15px;
 }
-#boxes .logo {
-  display: inline-block;
-  width: 75%;
-  height: 85px;
-  background: url('https://cdn.shopify.com/s/files/1/0677/1369/files/logo_dark.png?15654') 50% 50%;
-  background-size: 100%;
+#newsletter .logo {
+  display: block;
+  width: 100%;
+  height: 140px;
+  background: url("https://cdn.shopify.com/s/files/1/0677/1369/files/logo_dark.png?15654") 50% 50% no-repeat;
+  background-size: 90%;
 }
-#boxes .thanks {
+#newsletter .thanks {
   font-family: 'oswald', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -2333,7 +2334,7 @@ footer{
   font-size: 15px;
   margin-bottom: 10px;
 }
-#boxes #dialog {
+#newsletter #dialog {
   top: 150px !important;
   width:450px; 
   height:auto;
@@ -2342,15 +2343,15 @@ footer{
   font-size: 12px;
   text-align: center;
 }
-#boxes input{
+#newsletter input{
   padding: 5px 10px;
   border-radius: 5px 0 0 5px;
   border: 2px solid white;
   margin-top: 20px;
   border: 1px solid grey;
-  width: 91%;
+  width: 93%;
 }
-#boxes button[type="submit"]{
+#newsletter button[type="submit"]{
   background: transparent;
   border: none;
   padding: 0;

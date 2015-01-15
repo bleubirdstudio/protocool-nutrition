@@ -24,6 +24,8 @@
     <a href="http://myprotocol.protocolnutrition.com/" class="find become" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0677/1369/files/become.png?10464" alt=""></a>
     <a href="http://myprotocol.protocolnutrition.com/" class="find customize" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0677/1369/files/customize.png?10464" alt=""></a>
  </div>  
+ <a class="newsletter-banner col-md-12" data-toggle="modal" data-target="#newsletter">Sign up for Protocol Nutritions Newsletter and Receive $5 off your first purchase</a>
+
 
 
 <div class="container-fluid social" >
@@ -42,7 +44,7 @@
       <a href="/collections/frontpage" id="featured"><span class="black"></span><div class="text">featured <br> products</div></a>
     </div>
     <div class="col-md-4 col-sm-4" style="padding: 0 3px;">
-      <a href="/pages/join-our-newsletter" id="join"><span class="black"></span><div class="text">join our <br> movement</div></a>
+      <a id="join" style="cursor: pointer;" data-toggle="modal" data-target="#newsletter"><span class="black"></span><div class="text">join our <br> movement</div></a>
     </div>
   </div>
 </div>  
@@ -98,18 +100,25 @@
   </div>
   <a href="collections/frontpage" class="view_all">View All Featured Products</a>
 </div> 
-<div id="boxes">
-  <div style="top: 199.5px; left: 551.5px; display: none;" id="dialog" class="window"> 
-  <div class="thanks">Thank you for choosing</div>
-  <div class="logo"></div> 
-    <div id="lorem">
-      <p>For a limited time, sign up for the Protocol Nutrition Newsletter and receive a $5 off coupon for your first order. Be the first to hear about our exciting sales, specials and tips for the best health. We look forward to helping you reach your personal goals. Stick to protocol!</p>
+
+
+
+<div class="modal fade" id="newsletter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="thanks">Thank you for choosing</div>
+      <div class="logo"></div> 
+      <div id="lorem">
+        <p>For a limited time, sign up for the Protocol Nutrition Newsletter and receive a $5 off coupon for your first order. Be the first to hear about our exciting sales, specials and tips for the best health. We look forward to helping you reach your personal goals. Stick to protocol!</p>
+      </div>
+      <div id="popupfoot">
+        <form action="{{ settings.mailing_list_form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+          <input type="email" value="" placeholder="Email Address" name="EMAIL" id="mail" />
+          <button type="submit" class="newsletter" value="Subscribe" name="subscribe" id="subscribe"></button>
+        </form>
+      </div>
     </div>
-    <div id="popupfoot"><form action="{{ settings.mailing_list_form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
-                <input type="email" value="" placeholder="Email Address" name="EMAIL" id="mail" /><button type="submit" class="newsletter" value="Subscribe" name="subscribe" id="subscribe"></button>
-              </form></div>
   </div>
-  <div style="width: 1478px; font-size: 32pt; color:white; height: 602px; display: none; opacity: 0.8;" id="mask"></div>
 </div>
 
 
