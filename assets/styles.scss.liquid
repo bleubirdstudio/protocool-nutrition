@@ -320,6 +320,96 @@ h1{
     :-ms-input-placeholder { color: #4c4c4c; }
   }
 }
+.is-sticky{
+  height: 67px !important;
+  -webkit-transition: .15s;
+  -moz-transition: .15s;
+  -o-transition: .15s;
+  -ms-transition: .15s;
+  .navigational{
+    height: 67px;
+    -webkit-transition: .15s;
+      -moz-transition: .15s;
+      -o-transition: .15s;
+      -ms-transition: .15s;
+    .main{
+      height: 63px !important;
+      -webkit-transition: .15s;
+        -moz-transition: .15s;
+        -o-transition: .15s;
+        -ms-transition: .15s;
+    }
+    .muscle{
+      height: 69px;
+      -webkit-transition: .15s;
+        -moz-transition: .15s;
+        -o-transition: .15s;
+        -ms-transition: .15s;
+    }
+    .logo{
+      width: 15%;
+      margin-top: -12px;
+      -webkit-transition: .15s;
+        -moz-transition: .15s;
+        -o-transition: .15s;
+        -ms-transition: .15s;
+    }
+    ul{ 
+      li{
+        a{
+          padding: 20px 13px 20px 13px;
+          -webkit-transition: .15s;
+            -moz-transition: .15s;
+            -o-transition: .15s;
+            -ms-transition: .15s;
+        }
+      }
+    }
+    .search-field{
+      .got{
+        &:after{
+          padding: 19px 25px;
+          -webkit-transition: .15s;
+            -moz-transition: .15s;
+            -o-transition: .15s;
+            -ms-transition: .15s;
+        }
+      }
+    } 
+  }
+  .customer-tools{
+    #cart-target{
+      .cart{
+        padding: 20px 25px;
+        -webkit-transition: .15s;
+          -moz-transition: .15s;
+          -o-transition: .15s;
+          -ms-transition: .15s;
+      }
+      .full-cart{
+        top: 64px;
+      }
+    }
+    .toolbar-customer{
+      height: 63px;
+      -webkit-transition: .15s;
+        -moz-transition: .15s;
+        -o-transition: .15s;
+        -ms-transition: .15s;
+      a{
+        padding: 25px 0 25px 0;
+        top: -3px;
+        -webkit-transition: .15s;
+          -moz-transition: .15s;
+          -o-transition: .15s;
+          -ms-transition: .15s;
+        &:after{
+          height: 67px;
+        }
+      }
+    }
+  } 
+}
 
 .featured-products{
   .each{
@@ -418,6 +508,10 @@ h1{
       text-align: left;
       padding: 15px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      -webkit-transition: .2s;
+      -o-transition: .2s;
+      -ms-transition: .2s;
+      -moz-transition: .2s;
       &:after{
         content: '';
         display: inline-block;
@@ -537,7 +631,7 @@ h1{
   .toolbar-customer{
     display: inline-block;
     font-size: 12px;
-    width: 105px;
+    width: 100px;
     height: 100px;
     a{
       opacity: .75;
@@ -551,6 +645,16 @@ h1{
       position: relative;
       top: -3px;
       left: -5px;
+      &:after {
+        content: '';
+        display: inline-block;
+        height: 109px;
+        border-right: 1px solid rgba(0, 0, 0, 0.25);
+        float: right;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
       &:hover{
         color: #bd3a25;
         background: #333333;
@@ -630,34 +734,30 @@ h1{
     z-index: 10;
     bottom: 0;
     padding: 0;
-    width: 100%;
-    text-align: center;
+    right: 0;
+    text-align: right;
+    margin: 0 38px 25px 0;
     li{
-      width: 10px;
-      height: 10px;
+      width: 40px;
+      height: 40px;
       display: inline-block;
       border-radius: 50%;
-      background: white;
-      margin: 0 10px;
-      color: transparent;
+      background: transparent;
+      border: 1px solid white;
+      margin: 0 3px;
+      color: white;
       cursor: pointer;
-      opacity: .75;
+      padding: 7px 0 0 3px;
+      font-size: 17px;
+      text-align: center;
       -webkit-transition: .25s;
       -moz-transition: .25s;
       -ms-transition: .25s;
       -o-transition: .25s;
       &:hover{
-        -webkit-transform: scale(2);
-        -moz-transform: scale(2);
-        -ms-transform: scale(2);
-        -o-transform: scale(2);
+        background: #bd3a25;
       }
       &.active{
-        -webkit-transform: scale(2);
-        -moz-transform: scale(2);
-        -ms-transform: scale(2);
-        -o-transform: scale(2);
-        opacity: 1;
         background: #bd3a25;
       }
     }
@@ -1944,21 +2044,21 @@ footer{
     background-size: 100%; 
     h1{
       text-align: center;
-      margin-top: 175px;
+      position: relative;
+      width: 75%;
+      margin: 350px auto 60px auto;
       font-family: 'Oswald', sans-serif;
       text-transform: uppercase;
-      color: white;
-      border-top: 1px solid white;
-      border-bottom: 1px solid white;
-      background-color: rgba(255, 255, 255, 0.25);
+      font-family: 'Oswald', sans-serif !important;
+      color: #bd3a25;
+      background-color: rgba(255, 255, 255, 1);
       padding: 20px;
-      font-size: 50px;
-      text-shadow: 1px 1px 10px rgba(0, 0, 0, .5);
+      font-size: 75px;
       letter-spacing: 1.5px;
     }
   }
   .container{
-    margin: 25px auto;
+    margin: 65px auto;
     border-top: 1px solid #cccccc;
     border-bottom: 1px solid #cccccc;
     padding: 25px 0;
@@ -1972,6 +2072,62 @@ footer{
   img{
     width: 200px;
     margin-top: 10px;
+  }
+}
+
+/*affiliate*/
+#affiliate{
+  .ban{
+    width: 100%;
+    min-width: 1200px;
+    display: inline-block;
+    height: 300px !important;
+    background: url('https://cdn.shopify.com/s/files/1/0677/1369/files/affiliate.jpg?16827') 50% 0 fixed;
+    background-size: 100%; 
+    h1{
+      text-align: center;
+      position: relative;
+      width: 75%;
+      margin: 250px auto 60px auto;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      font-family: 'Oswald', sans-serif !important;
+      color: #bd3a25;
+      background-color: rgba(255, 255, 255, 1);
+      padding: 20px;
+      font-size: 75px;
+      letter-spacing: 1.5px;
+    }
+  }
+  .container{
+    margin: 65px auto;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    padding: 25px 0;
+  }
+  p{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    color: #4c4c4c;
+  }
+  img{
+    width: 200px;
+    margin-top: 10px;
+  }
+}
+.jotform-form{
+  display: none;
+  .form-all{
+    width: 100%;
+    .form-header-group{
+      h2{
+        font-family: 'Oswald', sans-serif;
+        text-transform: uppercase;
+        color: #bd3a25;
+        font-size: 20px;
+      }
+    }
   }
 }
 
