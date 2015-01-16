@@ -124,7 +124,8 @@
                   {% unless product.available %}
                   <p>Sold Out</p>
                   {% else %}
-                  <input type="submit" id="add-to-cart" class="btn addtocart" name="add" value="Add to cart" onClick="history.go(0)" />
+                  <input type="hidden" id="add-to-cart" class="btn addtocart" name="add" value="Add to cart" onClick="history.go(0)" />
+                  <input type="submit" value="Add to cart" class="btn" />
                   <input type="hidden" name="return_to" value="back" />
                   <div id="cart-animation" style="display:none">1</div>
                   {% endunless %}

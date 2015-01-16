@@ -2040,8 +2040,8 @@ footer{
     min-width: 1200px;
     display: inline-block;
     height: 400px !important;
-    background: url('https://cdn.shopify.com/s/files/1/0677/1369/files/dog.jpg?10767') 50% 950px fixed;
-    background-size: 100%; 
+    background: url('https://cdn.shopify.com/s/files/1/0677/1369/files/dog.jpg?10767') 50% -300px fixed;
+    background-size: cover; 
     h1{
       text-align: center;
       position: relative;
@@ -2082,8 +2082,8 @@ footer{
     min-width: 1200px;
     display: inline-block;
     height: 300px !important;
-    background: url('https://cdn.shopify.com/s/files/1/0677/1369/files/affiliate.jpg?16827') 50% 0 fixed;
-    background-size: 100%; 
+    background: url('https://cdn.shopify.com/s/files/1/0677/1369/files/affiliate.jpg?16827') 50% -300px fixed;
+    background-size: cover; 
     h1{
       text-align: center;
       position: relative;
@@ -2105,30 +2105,52 @@ footer{
     border-bottom: 1px solid #cccccc;
     padding: 25px 0;
   }
-  p{
+  p, ul{
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 300;
-    font-size: 13px;
+    font-size: 14px;
     color: #4c4c4c;
+    li{
+      margin: 10px 0;
+    }
   }
   img{
     width: 200px;
     margin-top: 10px;
   }
-}
-.jotform-form{
-  display: none;
-  .form-all{
+  form.contact-form{
     width: 100%;
-    .form-header-group{
-      h2{
-        font-family: 'Oswald', sans-serif;
-        text-transform: uppercase;
-        color: #bd3a25;
-        font-size: 20px;
-      }
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 20px;
     }
-  }
+    label{
+      color: #808080;
+    }
+    input{
+      padding: 7px;
+      border: 1px solid #cccccc;
+      display: block;
+      width: 100%;
+      margin-bottom: 25px;
+    }
+    input[type="submit"]{
+      margin-bottom: 0;
+    }
+    select{
+      height: 20px;
+    }
+    .successForm{
+      position: absolute;
+      top: 80px;
+      padding: 10px 25px;
+      background: rgba(0,97,0,0.5);
+      font-weight: bold;
+      color: white;
+      border-radius: 10px;
+      box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.5);
+      border: 3px solid rgb(0, 92, 0);
+    }
 }
 
 /*questions*/
