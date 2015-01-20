@@ -66,6 +66,7 @@
   {% endif %}
   {{ 'scripts.js' | asset_url | script_tag }}
 
+
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
@@ -98,14 +99,18 @@
 
   <!-- NAVBAR -->
   <nav class="navigational container-fluid muscle" id="sticker">
+    <div class="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <div class="container">
       <div class="logo">
         <h1><a href="/"><img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" /></a></h1>
       </div> 
-        
-      <nav class="main navigational">
-        {% include 'dropdown' %}
-      </nav>
+        <nav class="main navigational">
+          {% include 'dropdown' %}
+        </nav>
       <div class="search-field fl">
         <span class="got"></span>
         <form class="search" action="/search">
@@ -131,6 +136,24 @@
             </span>
         </div>
         {% include 'customer_links' %}
+      </div>
+      <div id="cart-target" class="mobile-cart">
+        <a href="/cart" class="cart" title="Shopping Cart"></a>
+      </div>
+      <div class="mobile-version">
+          <nav class="main navigational">
+            {% include 'dropdown' %}
+          </nav>
+        <div class="search-field fl">
+          <span class="got"></span>
+          <form class="search" action="/search">
+            <input type="image" src="{{ 'mag.png' | asset_url }}" alt="go" id="go" />
+            <input type="text" name="q" class="search_box" placeholder="Search" value="{{ search.terms }}" />
+          </form>
+        </div>
+        <div class="customer-tools">
+          {% include 'customer_links' %}
+        </div>
       </div>
 
     </div>  
@@ -192,7 +215,7 @@
         <div class="span4">
           
           {% if settings.footer_display_newsletter %}
-          <div class="col-md-3 col-sm-3 col-xs-3 no-pad">
+          <div class="col-md-3 col-sm-3 col-xs-12 no-pad">
             <div class="p30 newsletter-area">
               <h4>Join Our Newsletter</h4>
               <p>Join the Protocol Nutrition list and get all of our exciting sales, specials and tips for the best health. Stick to Protocol!</p>
@@ -244,7 +267,7 @@
           {% endunless %}
         End copyright -->
       <div class="col-md12 bottom-area">
-        <div class="title">2015 Protocol Nutrition &nbsp;&nbsp;&nbsp; <a href="/pages/privacy-policy">Privacy Policy</a> &nbsp;/&nbsp; <a href="/pages/return-policy">Return Policy</a></div>
+        <div class="title"><span>2015 Protocol Nutrition</span> &nbsp;&nbsp;&nbsp; <a href="/pages/privacy-policy">Privacy Policy</a> &nbsp;/&nbsp; <a href="/pages/return-policy">Return Policy</a></div>
         <div class="created_by">Design and Developement by <a href="http://thebleubirdstudio.com/" target="_blank">Bleu Bird Studio</a></div>
       </div>
       </div>
@@ -303,5 +326,7 @@
   
   {% endif %}
   
+
+<input type="hidden" name="_pc_params" value="{{ shop.permanent_domain }}:{{ customer.id }}" />
 </body>
 </html>

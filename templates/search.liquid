@@ -17,15 +17,9 @@
   
   {% if search.results == empty %}
   <div class="row">
-    <div class="span12 expanded-message">
+    <div class="col-md-12 expanded-message">
       <h2>No search results</h2>
       <span class="subtext">Your search for <strong>"{{ search.terms }}"</strong> did not yield any results. Try searching for something else.</span>
-      <div class="search-field">
-        <form class="search" action="/search">
-          <input type="image" src="{{ 'icon-search.png' | asset_url }}" alt="Go" id="go">
-          <input type="text" name="q" class="search_box" placeholder="Search" value="{{ search.terms | escape }}"  />
-        </form>
-      </div>
     </div>
   </div>
   {% else %}
